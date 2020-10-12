@@ -32,6 +32,9 @@ module.exports = $baseCtrl(
     if (req.files && req.files["photo"]) {
       req.body.photo = req.files["photo"][0].secure_url;
     }
+
+    req.body.enabled = true
+
     // save user to db
     const newUser = await new models._user(req.body).save();
 
