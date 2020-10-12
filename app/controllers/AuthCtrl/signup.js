@@ -31,17 +31,7 @@ module.exports = $baseCtrl(
     if (errorsCheck) {
       return APIResponse.UnprocessableEntity(res, errorsCheck[0].msg);
     }
-
-    // Check if values not entered
-    if (
-      req.body.username === undefined ||
-      req.body.password === undefined ||
-      req.body.email === undefined ||
-      req.body.gender === undefined ||
-      req.body.country === undefined
-    ) {
-      return APIResponse.BadRequest(res, "You have to fill all options .");
-    }
+    
 
     // Check if E-mail Already Exist
     let user = await models._user.findOne({ email: req.body.email });
@@ -67,25 +57,15 @@ module.exports = $baseCtrl(
       req.body.photo = req.files["photo"][0].secure_url;
     }
 
-    if (req.authenticatedUser) {
-      if (req.authenticatedUser.role === "admin" && req.body.role === "teacher")
-        req.body.enabled = true;
-      else
-        return APIResponse.Forbidden(
-          res,
-          "Your role dont allow you to add teacher "
-        );
-    } else {
-      // generate random code ***** , and send to user
-      const newCode = generator.generateCodes("#+#+#", 100)[0];
-      req.body.code = newCode;
-      transproter.sendMail({
-        to: req.body.email,
-        from: process.env.email,
-        subject: "verification code",
-        text: ` your verification code is ${newCode}`,
-      });
-    }
+    // generate random code ***** , and send to user
+    const newCode = generator.generateCodes("#+#+#", 40)[0];
+    req.body.code = newCode;
+    transproter.sendMail({
+      to: req.body.email,
+      from: process.env.email,
+      subject: "verification code",
+      text: ` your verification code is ${newCode}`,
+    });
     // save user to db
     const newUser = await new models._user(req.body).save();
 

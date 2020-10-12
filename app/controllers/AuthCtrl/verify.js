@@ -12,7 +12,7 @@ module.exports = $baseCtrl(async (req, res) => {
     user.enabled = true;
     user.code = undefined;
     await user.save();
-    const payload = {
+    const payload = { 
       userId: user.id,
       userRole: user.role,
     };

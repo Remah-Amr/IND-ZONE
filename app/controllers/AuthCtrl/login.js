@@ -22,7 +22,7 @@ module.exports = $baseCtrl(async (req, res) => {
   if (!isMatch) {
     return APIResponse.Unauthorized(res, "Invalid email or password 2");
   }
-
+ 
   // if user not enter code , his email still disabled
   if (!user.enabled) {
     return APIResponse.Unauthorized(res, "Your account is disabled");
