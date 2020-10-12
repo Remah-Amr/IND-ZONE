@@ -2,4 +2,4 @@ const mongoose = require("mongoose");
 const UserModel = require("./_user.model");
 
 const schema = new mongoose.Schema({}, { discriminatorKey: "role" });
-module.exports = UserModel.discriminator("secretarial", schema);
+module.exports = UserModel.discriminator("secretary", schema);
