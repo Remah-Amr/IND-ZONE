@@ -9,6 +9,7 @@ const $baseModel = require("../$baseModel");
 const passwordRules = /^.{6,}$/;
 const emailRules = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const phoneRules = /^01[0125][0-9]{8}$/;
+const nationalNumberRoles = /^[0-9]{14}$/
 // https://regexr.com/3c53v
 
 const schema = new mongoose.Schema(
@@ -65,6 +66,17 @@ const schema = new mongoose.Schema(
     birthdate: {
       type: Date,
     },
+    nationalNumber:{
+      type: String,
+      match: nationalNumberRoles,
+      unique: true,
+      index: true,
+      sparse: true,
+
+    },
+    address: {
+      type: String
+    },
     pushTokens: [
       new mongoose.Schema(
         {
@@ -85,18 +97,19 @@ const schema = new mongoose.Schema(
   { timestamps: true, discriminatorKey: "role" }
 );
 
-const response = (doc, options) => {
+const response = (doc) => {
   return {
     id: doc.id,
     username: doc.username,
-    password: options.password && !doc.activated ? doc.password : undefined,
     gender: doc.gender,
+    nationalNumber: doc.nationalNumber,
+    birthdate: doc.birthdate,
+    address: doc.address,
     photo: doc.photo,
     email: doc.email,
     phone: doc.phone,
     country: doc.country,
     enabled: doc.enabled,
-    birthdate: doc.birthdate,
     pushTokens: doc.pushTokens,
     role: doc.role,
     createdAt: doc.createdAt,

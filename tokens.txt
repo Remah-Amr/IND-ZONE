@@ -6,6 +6,25 @@ Admin :
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJSb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDI1MjYxMzZ9.sJYvsJLgan7WGvEqQMsnBzA6dSbU1CaOQQN_ZD5q4kM
 
 
-Secretary: 
+Secretary 2 : 
+{
+    "email": "remaha0@gmail.com",
+    "password": "123456"
+}
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJSb2xlIjoic2VjcmV0YXJ5IiwiaWF0IjoxNjAyNTI2NTU1fQ.BXqqvmf7FKC2d7LlrC_dqwSdX20XO_XSQXevfZtM-qI
 
 
+Secretary 3:
+{
+    "email": "remah73335@gmail.com",
+    "password": "123456"
+}
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJSb2xlIjoic2VjcmV0YXJ5IiwiaWF0IjoxNjAyNTI2NjU3fQ.H3_ApInX3NZ9k1L1ZXSdqcoK9SB7ztriDO2xBTMP8pM
+
+
+Customer 4:
+{
+    "email": "rema73335@gmail.com",
+    "password": "123456"
+}
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJSb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2MDI1MjY3OTB9.sKdDXgjG36wqukj7M0hfer0rS-MNDH9ES5IqcPgxd2s
