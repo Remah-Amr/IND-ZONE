@@ -9,19 +9,32 @@ module.exports = $baseCtrl(
   cloudinaryStorage,
   async (req, res) => {  
 
-    // Check if E-mail Already Exist
-    let user = await models._user.findOne({ email: req.body.email });
+    // Check if E-mail,phone,national number Already Exist
+    let user = await models._user.findOne({ 
+      $or:[
+        {email: req.body.email},
+        { phone: req.body.phone},
+        {nationalNumber: req.body.nationalNumber}
+      ] });
     if (user) {
-      return APIResponse.BadRequest(res, " Email Already in use .");
+      return APIResponse.BadRequest(res, " Email/Phone/nationalNumber Already in use .");
     }
 
-    // Check if phone Already Exist
-    if (req.body.phone) {
-      let existPhone = await models._user.findOne({ phone: req.body.phone });
-      if (existPhone) {
-        return APIResponse.BadRequest(res, " phone Already in use .");
-      }
-    }
+    // // Check if phone Already Exist
+    // if (req.body.phone) {
+    //   let existPhone = await models._user.findOne({ phone: req.body.phone });
+    //   if (existPhone) {
+    //     return APIResponse.BadRequest(res, " phone Already in use .");
+    //   }
+    // }
+
+    // // Check if national number Already Exist
+    // if (req.body.nationalNumber) {
+    //   let existnationalNumber = await models._user.findOne({ nationalNumber: req.body.nationalNumber });
+    //   if (existnationalNumber) {
+    //     return APIResponse.BadRequest(res, " nationalNumber Already in use .");
+    //   }
+    // }
 
     // Encrypt Password
     var salt = bcrypt.genSaltSync(10);
