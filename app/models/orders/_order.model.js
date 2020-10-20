@@ -28,6 +28,7 @@ const response = (doc) => {
     violations:doc.violations, // follow
     reportPreviewOnNature:doc.reportPreviewOnNature, // follow
     notes:doc.notes,  // follow
+    holderOfTheSite: doc.holderOfTheSite,
     activity:doc.activity, // follow & preview
     company: doc.company, // preview
     nameOfOwner: doc.nameOfOwner, // preview & project

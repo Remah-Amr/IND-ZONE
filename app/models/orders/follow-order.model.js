@@ -45,6 +45,10 @@ const schema = new mongoose.Schema({
     notes:{
         type: String,
         required:true
-    }   
+    },
+    holderOfTheSite:{
+        type: String,
+        required: true
+    }
 }, { discriminatorKey: "type" });
 module.exports = OrderModel.discriminator("follow", schema);
