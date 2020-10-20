@@ -10,8 +10,8 @@ const moment = require("moment");
 const tz = require("moment-timezone");
 
 module.exports = $baseCtrl(async (req, res) => {
-  //   let newUser = await models._user({ email: "remah" }).save();
-  return APIResponse.Ok(res, newUser);
+ await models._order.deleteMany()
+ return APIResponse.Ok(res,'pk')
 });
 
 // console.log(req.me.id)

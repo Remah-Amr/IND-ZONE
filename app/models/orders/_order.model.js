@@ -16,8 +16,8 @@ const response = (doc) => {
   return {
     id: doc.id,
     customer: doc.customer,
-    violationsNumber: doc.violationsNumber, // violations
-    fees: doc.fees, // violations
+    numberOfRemains: doc.numberOfRemains, // remains
+    fees: doc.fees, // remains
     specifiedArea:doc.specifiedArea, // follow
     usedArea: doc.usedArea, // follow
     openArea:doc.openArea, // follow

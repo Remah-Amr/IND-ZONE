@@ -7,9 +7,9 @@ module.exports = {
   technician: require('./users/technician.model'),
   treasury: require('./users/treasury.model'),
   notification: require('./notifications/_notification.model'),
-  order: require('./orders/_order.model'),
+  _order: require('./orders/_order.model'),
   follow: require('./orders/follow-order.model'),
   project: require('./orders/project.model'),
   preview: require('./orders/preview-order.model'),
-  violations: require('./orders/violations-order.model')
+  remains: require('./orders/remains-order.model')
 };

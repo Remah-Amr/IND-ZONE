@@ -3,7 +3,7 @@ const models = require("../../models");
 const APIResponse = require("../../utils/APIResponse");
 
 module.exports = $baseCtrl(async (req, res) => {
-    const orders = await models.order.fetchAll(
+    const orders = await models._order.fetchAll(
         req.allowPagination,
         req.queryFilter,
         {
