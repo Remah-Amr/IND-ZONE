@@ -18,7 +18,7 @@ module.exports = $baseCtrl(async (req, res) => {
   const user = await models._user.findOne({ email: req.body.email });
   if (!user) return APIResponse.NotFound(res);
 
-  const newCode = generator.generateCodes("#+#+#", 100)[0];
+  const newCode = generator.generateCodes("#+#+#", 40)[0];
   transproter.sendMail({
     to: req.body.email,
     from: process.env.email,
