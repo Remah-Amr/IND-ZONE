@@ -4,7 +4,7 @@ const { APIResponse } = require("../../utils");
 
 module.exports = $baseCtrl(
   async (req, res) => {  
-    const employees = await models._user.find({role: {$ne : 'customer'},enabled: true})
+    const employees = await models._user.find({role: {$in : ['accountant','secretary','technician','treasury']},enabled: true})
 
     return APIResponse.Ok(res,employees)
    
