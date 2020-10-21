@@ -13,7 +13,7 @@ module.exports = $baseCtrl(async (req, res) => {
  // get project orders , add nameOfProject
  let projects = await models.project.find()
  for(let i = 0; i < projects.length;i++){
-    await projects[i].set({nameOfProject:"Build Factory"}).save()
+    await projects[i].set({activity:"Build Factory"}).save()
  }
  return APIResponse.Ok(res,'Ok')
 });

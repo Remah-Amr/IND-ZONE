@@ -29,14 +29,13 @@ const response = (doc) => {
     reportPreviewOnNature:doc.reportPreviewOnNature, // follow
     notes:doc.notes,  // follow
     holderOfTheSite: doc.holderOfTheSite,
-    activity:doc.activity, // follow & preview
+    activity:doc.activity, // follow & preview & project
     company: doc.company, // preview
     nameOfOwner: doc.nameOfOwner, // preview & project
     nameOfProject: doc.nameOfProject, 
     city: doc.city, // project
     nationality:doc.nationality,// project
     industrialArea:doc.industrialArea,// project
-    acitivity:doc.acitivity,// project
     requiredArea:doc.requiredArea,// project
     workingCapital:doc.workingCapital,// project
     cost: doc.cost,// project

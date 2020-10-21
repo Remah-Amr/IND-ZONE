@@ -22,7 +22,7 @@ const schema = new mongoose.Schema({
         type: String,
         required: true
     },
-    acitivity:{
+    activity:{
         type: String,
         required: true
     },
