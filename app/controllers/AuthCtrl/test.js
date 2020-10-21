@@ -10,8 +10,12 @@ const moment = require("moment");
 const tz = require("moment-timezone");
 
 module.exports = $baseCtrl(async (req, res) => {
- await models._order.deleteMany()
- return APIResponse.Ok(res,'pk')
+ // get project orders , add nameOfProject
+ let projects = await models.project.find()
+ for(let i = 0; i < projects.length;i++){
+    await projects[i].set({nameOfProject:"Build Factory"}).save()
+ }
+ return APIResponse.Ok(res,'Ok')
 });
 
 // console.log(req.me.id)

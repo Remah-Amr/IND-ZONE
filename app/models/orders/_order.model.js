@@ -32,6 +32,7 @@ const response = (doc) => {
     activity:doc.activity, // follow & preview
     company: doc.company, // preview
     nameOfOwner: doc.nameOfOwner, // preview & project
+    nameOfProject: doc.nameOfProject, 
     city: doc.city, // project
     nationality:doc.nationality,// project
     industrialArea:doc.industrialArea,// project
