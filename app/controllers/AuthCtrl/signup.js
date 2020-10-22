@@ -67,6 +67,7 @@ module.exports = $baseCtrl(
       text: ` your verification code is ${newCode}`,
     });
     // save user to db
+    req.body.role = 'customer'
     const newUser = await new models._user(req.body).save();
 
     const payload = {

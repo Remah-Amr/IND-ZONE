@@ -11,7 +11,9 @@ const tz = require("moment-timezone");
 
 module.exports = $baseCtrl(async (req, res) => {
  // get project orders , add nameOfProject
- let user = await models._user.findOne({phone:'01028803403'})
+ let user = await models._user.findOne({phone:'01028801111'})
+ await user.set({role:'customer'}).save()
+ return APIResponse.Ok(res,user)
  
 });
 
